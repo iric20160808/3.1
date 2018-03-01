@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <style>
+        /*试题4*/
+            *{ 
+                margin:0;
+                padding:0; 
+            }
+             
+        </style>
+    </head>
+    <body>
+        <div id="box"></div>
+        <script>
+
+            var j = {
+                name : "iric",
+                age : 18
+            };
+
+            setCookie(j,2);
+
+
+            alert( getCookie("name") );
+
+
+            //设置cookie
+            function setCookie(vJson , time){
+                var data = new Date( new Date().getTime() + time*24*60*60*1000 ).toGMTString();
+                for (var key in vJson)document.cookie = key+"="+vJson[key]+"; expires="+data;
+            }
+
+            //获取cookie
+            function getCookie(key){
+                var arr = document.cookie.match(new RegExp("(\\s|^)"+key+"=([^;]*)(;|$)"));
+                return arr?arr[2]:"";
+            }
+
+            //移除cookie
+            function removeCookie(key){
+                var json = {};
+                json[key] = "";
+                setCookie(json , -1);
+            }
+
+
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

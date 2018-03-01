@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>iric</title>
+		<style type="text/css">
+			/*试题1*/
+			*{
+				padding:0px;
+				margin:0px;
+			}
+			#wrapper{
+				position:relative;
+				border:1px blue solid;
+				height:600px;
+
+			}
+			#box{
+				position:absolute;
+			    left:0;
+			    top:0;
+			    right:0;
+			    bottom:0;
+			    margin:auto;
+			    width:100px;
+			    height:100px;
+			    background:red;
+			}
+		</style>
+	</head>
+<body>
+	<div id="wrapper">
+		<div id="box"></div>	
+
+	</div>
+	<script type="text/javascript">
+			//试题2
+			/*
+			  足球类
+			 */
+			var FootBall = function  () {
+			    this.play = function () {
+			        console.log('我在踢足球');
+			    }
+			}
+
+			/*
+			  篮球类
+			 */
+			var BasketBall = function  () {
+			    this.play = function () {
+			        console.log('我在打篮球');
+			    }
+			}
+
+			var football = new FootBall();
+			football.play();
+			var basketball = new BasketBall();
+			basketball.play();
+
+			/*
+			  球类工厂
+			 */
+			var Ball = function(name) {
+			    switch (name) {
+			        case '足球':
+			            return new FootBall();
+			        break;
+			        case '篮球':
+			            return new BasketBall();
+			        break;
+			    }
+			}
+			var football =  Ball('足球');
+			football.play();
+			var basketball =  Ball('篮球');
+			basketball.play();
+
+	</script>
+</body>
+</html>
